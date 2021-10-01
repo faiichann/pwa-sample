@@ -4,11 +4,17 @@ import {
   CircularProgress,
   GridList,
   GridListTile,
-  GridListTileBar
+  GridListTileBar,
+  AppBar,
+  Toolbar,
+  Box,
+  IconButton,
+  Button,
+  Typography
 } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useQuery } from "react-query";
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 const getPokemons = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
@@ -72,6 +78,25 @@ const App = () => {
 
   return (
     <>
+<Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
     <center><h1>PoKemon List</h1></center>
     <GridList cellHeight={300}>
       {pokemons.map((pokemon) => (
