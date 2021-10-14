@@ -96,7 +96,7 @@ const App = () => {
       </AppBar>
     </Box>
     <center><h1>PoKemon List</h1>
-    <p>This line still show if in offline mode...</p>
+    <p>This line still show if in offline mode...test branch</p>
     </center>
     <GridList cellHeight={300}>
       {pokemons.map((pokemon) => (
