@@ -9,7 +9,6 @@ import {
   Toolbar,
   Box,
   IconButton,
-  Button,
   Typography
 } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
@@ -91,13 +90,14 @@ const App = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Menubar
           </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
-    <center><h1>PoKemon List</h1></center>
+    <center><h1>PoKemon List</h1>
+    <p>This line still show if in offline mode...</p>
+    </center>
     <GridList cellHeight={300}>
       {pokemons.map((pokemon) => (
         <PokemonTile key={pokemon.name} {...pokemon} />
